@@ -1,4 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Models;
 var builder = WebApplication.CreateBuilder(args);
+
+// 環境変数から接続文字列取得（例: SQLSERVER_CONNECTION_STRING）
+var connectionString = Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION_STRING");
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    throw new InvalidOperationException("SQLSERVER_CONNECTION_STRING 環境変数が設定されていません。");
+}
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
