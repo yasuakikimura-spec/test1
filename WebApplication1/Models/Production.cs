@@ -1,16 +1,18 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
-    public class Project
+    public class Production
     {
         [Key]
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         public string Name { get; set; } = string.Empty;
+
+        [Required]
+        public int Quantity { get; set; }
 
         public string? Description { get; set; }
 
