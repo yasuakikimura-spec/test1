@@ -10,11 +10,13 @@ namespace WebApplication1.Models
         public Guid ID { get; set; }
 
         [Required]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty; // string is non-nullable by default in C# 8.0+
 
         public string? Description { get; set; }
+        // Ensure no typo in 'Description'
+
 
         [Timestamp]
-        public byte[]? RowVersion { get; set; }
+        public byte[]? RowVersion { get; set; } // byte[] is nullable
     }
 }

@@ -10,6 +10,8 @@ namespace WebApplication1.Models
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Project>? Projects { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
