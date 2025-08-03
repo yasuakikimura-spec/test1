@@ -1,8 +1,8 @@
-<changes><change><info>Change service dependency from ProductionService to ProductionManagementService. Update field, constructor, and usages accordingly for clarity.</info><content>using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using WebApplication1.Models;
 using WebApplication1.Application.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
@@ -109,5 +109,4 @@ namespace WebApplication1.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
-}</content></change>
-          </changes>
+}
